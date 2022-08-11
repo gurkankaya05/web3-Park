@@ -3,6 +3,7 @@ import {
     chakra,
     Flex,
     SimpleGrid,
+    Stack,
     Stat,
     StatLabel,
     StatNumber,
@@ -16,6 +17,7 @@ import {
   import PayForm from './PayForm';
   import BalanceForm from './BalanceForm';  
 import Park from './Park';
+import Park1 from '../assets/parkkk.jpg';
   
   
   function StatsCard(props) {
@@ -85,9 +87,24 @@ import Park from './Park';
             <PayForm/>
             <BalanceForm/>
     
-     
+
         </Flex>
-        <Park/>
+        <Stack 
+        as={Box}
+        textAlign={'center'}
+        spacing={{base: 8 , md:14}}
+        py={{base : 20 , md:20}}
+        >
+          <Flex justifyContent={'center'} alignItems={'center'}>
+
+
+     <Park park={Park1}/>
+          </Flex>
+
+
+
+        </Stack>
+
       </Box>
       
     );
