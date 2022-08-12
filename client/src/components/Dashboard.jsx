@@ -18,6 +18,8 @@ import {
   import BalanceForm from './BalanceForm';  
 import Park from './Park';
 import Park1 from '../assets/parkkk.jpg';
+import { BlockchainContext } from '../context/Blockchaincontext';
+import{useContext} from'react';
   
   
   function StatsCard(props) {
@@ -51,6 +53,9 @@ import Park1 from '../assets/parkkk.jpg';
   }
   
   export default function Dashboard() {
+    const{renterBalance} = useContext(BlockchainContext)
+
+
     return (
       <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
         <chakra.h1
@@ -63,7 +68,7 @@ import Park1 from '../assets/parkkk.jpg';
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 5, lg: 8 }}>
           <StatsCard
             title={'Your Balance'}
-            stat={'0.0 Avax'}
+            stat={`${renterBalance} AVAX`}
             icon={<BsPerson size={'2em'} />}
           />
           <StatsCard

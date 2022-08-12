@@ -8,16 +8,24 @@ import {
   Text,
   Flex
 } from '@chakra-ui/react'
-
+import { useContext } from 'react'
+import { BlockchainContext } from '../context/Blockchaincontext';
 export default function BalanceForm() {
+
+  const {deposit} = useContext(BlockchainContext);
   const {
     handleSubmit,
     register,
     formState: { errors, isSubmitting },
   } = useForm()
 
+
   const  onSubmit = async (values) => {
     console.log(JSON.stringify(values, null, 2))
+
+
+    const{creditbalance} = values;
+    await deposit(creditbalance)
    
   }
 

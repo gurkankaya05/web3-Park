@@ -30,7 +30,7 @@ const Park = ({park}) => {
     values['end'] = 0;
    const newValuesObject = {walletAddress: currentAccount,...values}
    const {walletAddress,canRent,active,balance,due,start,end} = newValuesObject
-  addRenter(walletAddress,canRent,active,balance,due,start,end)
+   await addRenter(walletAddress,canRent,active,balance,due,start,end)
 
     
     
