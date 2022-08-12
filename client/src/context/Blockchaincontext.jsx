@@ -10,7 +10,6 @@ export const BlockchainProvider = ({ children }) => {
 
         const [currentAccount, setCurrentAccount] = useState("");
         const [balance,setBalance] = useState();
-        const [renterExists,setRenterExists] = useState();
         const [renter, setRenter] = useState();
         const [renterBalance , setRenterBalance] = useState();
         const [due,setDue] = useState();
@@ -199,10 +198,10 @@ export const BlockchainProvider = ({ children }) => {
           
         }
       }
-      const checkOut = async() => {
+      const checkIn = async() => {
         try {
-          const checkOut = await contract.checkOut(currentAccount)
-          await checkOut.wait()
+          const checkIn = await contract.checkIn(currentAccount)
+          await checkIn.wait()
           await getRenter()
           
           
@@ -211,10 +210,10 @@ export const BlockchainProvider = ({ children }) => {
         }
       }
 
-      const checkIn = async() => {
+      const checkOut = async() => {
         try {
-            const checkIn = await contract.chechkIn(currentAccount)
-            await checkIn.wait()
+            const checkOut = await contract.checkOut(currentAccount)
+            await checkOut.wait()
             await getRenter()
             await getDue()
             await getTotalDuration()

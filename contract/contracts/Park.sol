@@ -30,7 +30,6 @@ contract Park{
 
     function checkIn(address walletAdress)external{
         require(renters[walletAdress].due == 0, "you have a pending balance");
-        require(renters[walletAdress].canRent == true , "You cannot rent");
         renters[walletAdress].start  = block.timestamp;
         renters[walletAdress].canRent = false;
         renters[walletAdress].active = true;        

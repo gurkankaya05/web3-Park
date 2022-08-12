@@ -53,7 +53,7 @@ import{useContext} from'react';
   }
   
   export default function Dashboard() {
-    const{renterBalance} = useContext(BlockchainContext)
+    const{renter ,renterBalance,due,duration} = useContext(BlockchainContext)
 
 
     return (
@@ -73,17 +73,17 @@ import{useContext} from'react';
           />
           <StatsCard
             title={'Due'}
-            stat={'0.0 Avax'}
+            stat={`${due} AVAX`}
             icon={<BsWallet size={'2em'} />}
           />
             <StatsCard
             title={'Park Minute'}
-            stat={'0'}
+            stat={duration}
             icon={<BiCar size={'2em'} />}
           />
           <StatsCard
             title={'Park Status'}
-            stat={'Rentable'}
+            stat={ renter && renter.active ? 'Busy' : 'Rentable'}
             icon={<RiParkingBoxLine size={'2em'} />}
           />
         </SimpleGrid>
