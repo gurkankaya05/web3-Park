@@ -1,8 +1,44 @@
 import { Stack,Button , Box , Image ,Text} from "@chakra-ui/react";
 import React from "react";
 
+
+
+import { useForm } from 'react-hook-form'
+
+import { useContext } from 'react'
+
+import { BlockchainContext } from "../context/Blockchaincontext";
+
+
 const Park = ({park}) => {
+ 
+  const {
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm()
+
+ 
+  const {currentAccount} = useContext(BlockchainContext)
+  
+
+  const onSubmit = async (values) => {
+    values['canRent'] = true;
+    values['active'] = false;
+    values['balance'] = 0;
+    values['due'] = 0;
+    values['start'] = 1;
+    values['end'] = 0;
+   const newValuesObject = {walletAddress: currentAccount,...values}
+   const {walletAddress,canRent,active,balance,due,start,end} = newValuesObject
+  addRenter(walletAddress,canRent,active,balance,due,start,end)
+
+    
+    
+  }
+
+
 return(
+  <form onSubmit={handleSubmit(onSubmit)}>
    <Box boxSize='lg' mx={3}>
     <Image src ={park} mb={4}/>
     <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempor justo ac diam rutrum, vel posuere turpis laoreet. Morbi porttitor diam vitae arcu fermentum gravida. </Text>
@@ -18,6 +54,7 @@ return(
     </Stack>
 
    </Box>
+   </form>
 )
 }
 

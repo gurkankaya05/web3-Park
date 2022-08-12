@@ -32,7 +32,7 @@ import Park1 from '../assets/parkkk.jpg';
         rounded={'xl'}>
         <Flex justifyContent={'space-between'}>
           <Box pl={{ base: 2, md: 4 }}>
-            <StatLabel fontWeight={'small'} isTruncated>
+            <StatLabel fontWeight={'small'} >
               {title}
             </StatLabel>
             <StatNumber fontSize={'xl'} fontWeight={'200    '}>
