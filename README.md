@@ -1,5 +1,5 @@
 # web3-Park
-Decentralized Park Rental App on Avalanche 
+Park Rental App on Avalanche 
 
 
 
