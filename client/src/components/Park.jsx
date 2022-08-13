@@ -24,16 +24,16 @@ const Park = ({park}) => {
   
 
   const onSubmit = async (values) => {
-    values['canRent'] = true;
-    values['active'] = false;
-    values['balance'] = 0;
-    values['due'] = 0;
-    values['start'] = 0;
-    values['end'] = 0;
-   const newValuesObject = {walletAddress: currentAccount,...values}
-   const {walletAddress,canRent,active, balance,due,start,end} = newValuesObject
+    // values['canRent'] = true;
+    // values['active'] = false;
+    // values['balance'] = 0;
+    // values['due'] = 0;
+    // values['start'] = 0;
+    // values['end'] = 0;
+  //  const newValuesObject = {walletAddress: currentAccount,...values}
+  //  const {walletAddress,canRent,active, balance,due,start,end} = newValuesObject
   
-  console.log(JSON.stringify(newValuesObject));
+  // console.log(JSON.stringify(newValuesObject));
   //  await addRenter(walletAddress,canRent,active,balance,due,start,end)
 
   }
@@ -42,7 +42,7 @@ const Park = ({park}) => {
 return(
   <form onSubmit={handleSubmit(onSubmit)}>
 
-    <Button> Add Renter </Button> 
+ 
    
 
    <Box boxSize='lg' mx={3}>

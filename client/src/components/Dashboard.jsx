@@ -23,7 +23,7 @@ import{useContext} from'react';
   
   
   function StatsCard(props) {
-    const { title, stat, icon } = props;
+    const { title, stat, icon, bgColor } = props;
     return (
       <Stat
         px={{ base: 3, md: 4 }}
@@ -31,7 +31,8 @@ import{useContext} from'react';
         shadow={'m'}
         border={'1px'}
         borderColor={useColorModeValue('gray.400', 'gray.200')}
-        rounded={'xl'}>
+        rounded={'xl'}
+        backgroundColor={bgColor}>
         <Flex justifyContent={'space-between'}>
           <Box pl={{ base: 2, md: 4 }}>
             <StatLabel fontWeight={'small'} >
@@ -53,7 +54,7 @@ import{useContext} from'react';
   }
   
   export default function Dashboard() {
-    const{renter ,renterBalance,due,duration} = useContext(BlockchainContext)
+    const{renter ,renterBalance,due,duration,getDue} = useContext(BlockchainContext)
 
 
     return (
@@ -83,7 +84,8 @@ import{useContext} from'react';
           />
           <StatsCard
             title={'Park Status'}
-            stat={ renter && renter.active ? 'Busy' : 'Rentable'}
+             stat={ renter && renter.active ? 'Busy': 'Rentable'}
+          
             icon={<RiParkingBoxLine size={'2em'} />}
           />
         </SimpleGrid>

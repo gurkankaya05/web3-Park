@@ -14,7 +14,7 @@ import {
 import { useContext } from 'react'
 import { BlockchainContext } from '../context/Blockchaincontext'
 export default function PayForm() {
-  const{payment} = useContext(BlockchainContext)
+     const{makePayment} = useContext(BlockchainContext)
 
   const {
     handleSubmit,
